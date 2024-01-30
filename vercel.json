@@ -1,0 +1,8 @@
+{
+  "functions": {
+    "api/*": {
+      "runtime": "node@14",
+      "memory": 1024
+    }
+  }
+}
