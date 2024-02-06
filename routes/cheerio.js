@@ -1,6 +1,7 @@
 import express from'express';
 import axios from "axios";
 import cheerio from "cheerio";
+import fetch from "node-fetch";
 const router = express.Router();
 
 
