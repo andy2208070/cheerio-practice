@@ -4,9 +4,71 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="https://rawgit.com/summerstyle/jsonTreeViewer/master/libs/jsonTree/jsonTree.css">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.5/axios.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cheerio/0.22.0/lib/index.js"></script>
+  <script src="https://rawgit.com/summerstyle/jsonTreeViewer/master/libs/jsonTree/jsonTree.js"></script>
   <title>Cheer Page</title>
 </head>
 <body>
-  HIHIHI
+  <div class="bg-gray-100 p-4 h-screen flex ">
+    <div id="formContainer" class="w-1/2 h-full">
+      <form id="dynamicForm" class="flex flex-col overflow-auto h-full gap-y-2" >
+        <!-- URL Input -->
+        <div class="flex space-x-4">
+          <label for="url" class="flex-shrink-0 w-1/4">URL:</label>
+          <input type="url" id="url" name="url" class="flex-grow border rounded-md p-2">
+        </div>
+  
+        <!-- Type Dropdown -->
+        <div class="flex space-x-4">
+          <label for="type" class="flex-shrink-0 w-1/4">Type:</label>
+          <select id="type" name="type" class="flex-grow border rounded-md p-2">
+            <option value="single">Single</option>
+            <option value="multiple">Multiple</option>
+          </select>
+        </div>
+  
+        <!-- query Input -->
+        <div class="flex space-x-4 hidden" id="query" >
+          <label for="query" class="flex-shrink-0 w-1/4">Query:</label>
+          <input  type="text" name="query" class="flex-grow border rounded-md p-2">
+        </div>
+  
+        <!-- Dynamic Group Fields -->
+        <div class="h-full overflow-auto ">
+          <button type="button" id="addGroupButton" class="bg-blue-500 text-white p-2 rounded-md">Add Column</button>
+          <div id="groupFields" class="h-full overflow-auto " style="height: calc(100% - 70px);">
+            <!-- Default Group -->
+          </div>
+  
+        </div>
+  
+        <!-- Submit Button -->
+        <div class="flex justify-center mt-auto">
+          <button type="submit" class="bg-green-500 text-white p-2 rounded-md">Submit</button>
+        </div>
+      </form>
+    </div>
+  
+    <div class="overflow-auto grow flex flex-col w-1/2 relative">
+      <div class="btns flex justify-end">
+        <button id="copyBtn" class="p-2 m-2 text-blue-400 bg-blue-100 rounded-full" style="width: 50px;height: 50px;">
+          <i class="fa-solid fa-copy"></i>
+        </button>
+        <button id="downloadBtn" class="p-2 m-2 text-blue-400 bg-blue-100 rounded-full" style="width: 50px;height: 50px;">
+          <i class="fa-solid fa-floppy-disk"></i>
+        </button>
+      </div>
+      <div id="jsontree" class="overflow-auto "style="height: calc(100% - 70px);"></div>
+    </div>
+  
+  </div>
+
+
+  <script src="/javascripts/cheer-page.js"></script>
 </body>
 </html>
