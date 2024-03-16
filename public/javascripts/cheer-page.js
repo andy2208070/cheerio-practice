@@ -2,9 +2,10 @@
 // https://codepen.io/amirhafizovic/pen/gZLwzb
 // https://stackoverflow.com/a/30800715
 // https://github.com/thgh/vercel-sapper/issues/61#issuecomment-1820345113
-// const apiUrl = `http://localhost:3456/api/cheerio`;
 // const apiUrl = `https://95783854-b6e7-49c6-b179-78d53e968ea0-00-3s8hk5zsml3z7.sisko.replit.dev/cheerio`
-const apiUrl = `https://cheerio-practice.vercel.app/api/cheerio`;
+// const apiUrl = `http://localhost:3456/api/cheerio`;
+// const apiUrl = `https://cheerio-practice.vercel.app/api/cheerio`;
+const apiUrl = `/api/cheerio`;
 const form = document.getElementById('dynamicForm');
 const typeInput = document.getElementById('type');
 const queryInput = document.getElementById('query');
