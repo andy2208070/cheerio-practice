@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/tailwind.min.css">
+    <title>TTS page</title>
+</head>
+<body>
+    <div class="h-screen bg-gray-100 p-8">
+        <div class="max-w-md mx-auto bg-white p-6 rounded-md shadow-md">
+            <h1 class="text-2xl font-semibold mb-4">Text-to-Speech Player</h1>
+        
+            <textarea id="textToSpeech" name="text" 
+            class="mb-4 w-full h-24 p-2 border border-gray-300 rounded-md" 
+            placeholder="Enter text here"></textarea>
+        
+            <select name="voice" id="voices"
+            class="mb-4 p-2 w-full border border-gray-300 rounded-md" >
+                <option value="">Select A Voice</option>
+            </select>
+
+            <label class="mb-4 block text-sm font-medium text-gray-700">Pitch
+                <input type="range" id="pitch" name="pitch" class="w-full" min="0" max="3" value="1" step="0.1" />
+            </label>
+        
+            <label class="mb-4 block text-sm font-medium text-gray-700">Rate
+                <input type="range" id="rate" name="rate" class="w-full" min="0.5" max="5" step="0.1" value="1" />
+            </label>
+        
+            <label class="mb-4 block text-sm font-medium text-gray-700">Volume
+                <input type="range" id="volume" name="volume" class="w-full" min="0" max="1" step="0.1" value="1" />
+            </label>
+        
+            <label class="mb-4 block text-sm font-medium text-gray-700">Progress
+                <input type="range" id="progress" class="w-full" min="0" max="100" step="1" value="0" />
+            </label>
+        
+            <div class="flex justify-between items-center w-full flex-wrap mb-6">
+                <button id="playBtn" class="px-4 py-2 bg-green-500 text-white rounded-md">Play</button>
+                <button id="pauseBtn" class="px-4 py-2 bg-yellow-500 text-white rounded-md">Pause</button>
+                <button id="stopBtn" class="px-4 py-2 bg-red-500 text-white rounded-md">Stop</button>
+                <button id="restartBtn" class="px-4 py-2 bg-purple-500 text-white rounded-md">Restart</button>
+                <button id="downloadBtn" class="px-4 py-2 bg-blue-500 text-white rounded-md">Download</button>
+            </div>
+        </div>
+    </div>
+    <script src="/javascripts/tts-page.js"></script>
+  
+  </body>
+  
+</html>

@@ -10,5 +10,9 @@ router.get('/pages/cheer', function(req, res, next){
   res.render('pages/cheer-page');
 });
 
+router.get('/pages/tts', function(req, res, next){
+  res.render('pages/tts-page');
+});
+
 // module.exports = router;
 export default router;
