@@ -23,6 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/gtts', express.static(path.join(__dirname, '/node_modules/gtts/lib/gTTS.js')));
 
 app.use('/', indexRouter);
 app.use('/api/cheerio', cheerioRouter);
